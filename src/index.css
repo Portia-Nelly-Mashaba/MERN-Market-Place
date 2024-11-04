@@ -14,7 +14,7 @@ code {
 
 
 
-.nav-link{
+.nav-link {
   color: white;
 }
 
@@ -23,22 +23,22 @@ h1 {
   text-align: center !important;
   color: black !important;
   text-decoration: none !important;
-  border-bottom: none !important; 
+  border-bottom: none !important;
 }
 
-.img-fluid{
+.img-fluid {
   height: 200px !important;
 }
 
-.big-img{
+.big-img {
   height: 400px !important;
 }
 
-p{
+p {
   text-align: left !important;
   padding: 20px !important;
 }
 
-.product-h1{
+.product-h1 {
   text-align: left !important;
 }

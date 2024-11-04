@@ -1,8 +1,9 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import products from './Products';
 
 const ProductDetails = () => {
+const products = []
+
   const { id: productid } = useParams();
   
   const product = products.find(product => product.id == productid)
@@ -12,7 +13,7 @@ const ProductDetails = () => {
         <div className="col-md-6 p-2">
           <div className="card">
             <h1 className="mt-3">{product.name}</h1>
-            <img src={product.Image} className="img-fluid m-3 big-img" alt={product.name} />
+            <img src={product.image} className="img-fluid m-3 big-img" alt={product.name} />
             <p>{product.description}</p>
           </div>
         </div>
