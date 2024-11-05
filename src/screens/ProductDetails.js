@@ -30,7 +30,7 @@ const products = []
                 })}
             </select>
             <hr />
-            <button class="btn btn-dark my-2 my-sm-0 text-end" type="submit">ADD TO CART</button>
+            <button className="btn btn-dark my-2 my-sm-0 text-end" type="submit">ADD TO CART</button>
 
           </div>
         </div>
