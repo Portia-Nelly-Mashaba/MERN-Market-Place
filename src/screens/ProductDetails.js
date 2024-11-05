@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { getProductById } from '../redux/actions/productActions';
 
 const ProductDetails = () => {
-const products = []
+
+  const products = []
 
   const { id: productid } = useParams();
-  
+
   const product = products.find(product => product.id == productid)
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(getProductById(productid))
+  }, [])
   return (
     <div className="container mt-5">
       <div className="row">
@@ -25,9 +34,9 @@ const products = []
             <h1 className='product-h1'>Select Quantity</h1>
 
             <select>
-                {[...Array(product.countInStock).keys()].map((x, i) =>{
-                    return <option value={i+1}>{i+1}</option>
-                })}
+              {[...Array(product.countInStock).keys()].map((x, i) => {
+                return <option value={i + 1}>{i + 1}</option>
+              })}
             </select>
             <hr />
             <button className="btn btn-dark my-2 my-sm-0 text-end" type="submit">ADD TO CART</button>

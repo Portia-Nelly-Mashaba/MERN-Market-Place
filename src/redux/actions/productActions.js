@@ -14,3 +14,18 @@ export const getAllProducts = () => (dispatch) => {
             dispatch({ type: 'GET_PRODUCTS_FAILED', payload: err });
         });
 };
+
+export const getProductById = (productid) => (dispatch) => {
+    dispatch({ type: 'GET_PRODUCTBYID_REQUEST' });
+
+    axios
+        .post('http://localhost:5000/getproductbyid', {productid})
+        .then((result) => {
+            console.log(result);
+            dispatch({ type: 'GET_PRODUCTBYID_SUCCESS', payload: result.data });
+        })
+        .catch((err) => {
+            console.log(err);
+            dispatch({ type: 'GET_PRODUCTBYID_FAILED', payload: err });
+        });
+};
